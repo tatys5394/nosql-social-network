@@ -92,7 +92,7 @@ router
         // remove Friend
         try {
             const user = await User.findOneAndUpdate(
-                {_id: req.params.id},
+                {_id: req.params.userId},
                 {$pull: {friends: req.params.friendId}},
                 {new: true}
             )
