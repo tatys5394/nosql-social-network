@@ -6,45 +6,44 @@ The purpose of this project is to create an application that allows the user to 
 
 ## Table of Contents
 
-* [Usage](#usage)
 * [Acceptance Criteria](#criteria)
+* [Usage](#usage)
 * [Screenshot](#screenshot)
-* [Walkthrough Video](#video)
+* [Links](#video)
 
 ## User Story
 
-A small business owner
-I WANT to be able to write and save notes
-SO THAT I can organize my thoughts and keep track of tasks I need to complete
+AS A social media startup
+I WANT an API for my social network that uses a NoSQL database
+SO THAT my website can handle large amounts of unstructured data
 
 ## Acceptance Criteria
 
-GIVEN a note-taking application
-WHEN I open the Note Taker
-THEN I am presented with a landing page with a link to a notes page
-WHEN I click on the link to the notes page
-THEN I am presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column
-WHEN I enter a new note title and the note’s text
-THEN a Save icon appears in the navigation at the top of the page
-WHEN I click on the Save icon
-THEN the new note I have entered is saved and appears in the left-hand column with the other existing notes
-WHEN I click on an existing note in the list in the left-hand column
-THEN that note appears in the right-hand column
-WHEN I click on the Write icon in the navigation at the top of the page
-THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
+GIVEN a social network API
+WHEN I enter the command to invoke the application
+THEN my server is started and the Mongoose models are synced to the MongoDB database
+WHEN I open API GET routes in Insomnia for users and thoughts
+THEN the data for each of these routes is displayed in a formatted JSON
+WHEN I test API POST, PUT, and DELETE routes in Insomnia
+THEN I am able to successfully create, update, and delete users and thoughts in my database
+WHEN I test API POST and DELETE routes in Insomnia
+THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
+
 
 ## Installation
-In order to get this application running I first had to run Node in order to run the server scripts. Node Package Managers (NPMs) such as express, fs, path, and uuid were needed in order to the the server scripts to work. I also worked with Heroku to deployment my application and used Insomnia to run tests to test out the code that would be going into the browser.
+In order to get this application running I first had to run "node server" in your terminal in order to get the server running on port 3001. I also used use Express.js for routing, a MongoDB database, and the Mongoose ODM.
 
 ## Usage
 
-In order to use this application the user must open up the browser, click on the button that's titled "Get Started". This will open up a server that has a section for the user to type a note tile, and note content. If the user wants to save the note, they must click the Save icon that is on teh right hand side of the screen and the note will become part of the list of notes on the left hand side. Once the user is ready to delete the note, the user can press the Trash icon, and the note will be deleted.
+In order to use this application the user must run node server and once the server is running on port 3001 the user should open up insomnia. Once there the user can test out the routes by typing in "http://localhost:3001" and after that if they want to test out the api user routes they would put "/api/users/". By setting the method to Get and pressing send the user will be able to "Get" all of the users that have been added. If the user wants to create a user the would change the method to Post and insert into the body the userName and the email of the user they want to create using proper JSON syntax. If the users wants to try to test out the rest of the routes I welcome the user to take a look at the demo video that I provided in this README (link found below).
 
-## Screenshot
-![logo](./pictures/svg-logo.png)
+## Screenshots
+![logo](./images/get%20all%20users.png)
+![logo](./images/update%20users.png)
+![logo](./images/get%20all%20thoughts.png)
+![logo](./images/create%20thoughts.png)
 
 ## Links
-
 VIDEO DEMO: https://drive.google.com/file/d/1OCz6mDICN5VsVvZ18miXFyXNARd_TzJp/view?usp=sharing
 
 GitHub Link: https://github.com/tatys5394/nosql-social-network.git
