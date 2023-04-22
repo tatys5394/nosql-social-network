@@ -25,7 +25,7 @@ router
         }
     })
 
-// /api/users/:id
+// /api/thoughts/:id
 router
     .route('/:id')
     .get(async (req, res) => {
@@ -33,8 +33,6 @@ router
         try {
             const thought = await Thought.findOne({_id: req.params.id})
                 .select('-__v')
-                .populate('users')
-                .populate('friends')
                 
             res.json(thought)
         } catch (err) {
